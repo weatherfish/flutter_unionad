@@ -83,7 +83,7 @@ class NativeAdView(
             override fun onError(code: Int, message: String?) {
                 Log.e(TAG, "信息流广告拉去失败 $code   $message")
                 mContainer!!.removeAllViews()
-                channel?.invokeMethod("onFail", message)
+                channel?.invokeMethod("onFail", "$code-$message")
             }
 
             override fun onFeedAdLoad(ads: MutableList<TTFeedAd>?) {
